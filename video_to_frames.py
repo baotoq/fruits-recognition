@@ -2,13 +2,12 @@ import cv2
 import os
 
 def video_to_frames(video, output_dir):
-    # extract frames from a video and save to directory as 'x.jpg' where 
-    # x is the frame index
-    cap = cv2.VideoCapture(video)
+    cap = cv2.VideoCapture(0)
     count = 0
-    while 1:
+    while True:
         success, frame = cap.read()        
         if success:
+            print('processing')
             cv2.imwrite(os.path.join(output_dir, '{0}.jpg'.format(count)), frame)
             count += 1
         else:
