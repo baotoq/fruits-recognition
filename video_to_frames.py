@@ -2,7 +2,7 @@ import cv2
 import os
 
 def video_to_frames(video, output_dir):
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(video)
     count = 0
     while True:
         success, frame = cap.read()        
@@ -20,4 +20,4 @@ def video_to_frames(video, output_dir):
 ###############################
 output_dir = 'output'
 
-video_to_frames('white.mp4', output_dir)
+video_to_frames('input.mp4', output_dir)

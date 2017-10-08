@@ -4,6 +4,17 @@
 
 ## HOW TO RUN
 
+### Terminal
 ```
 docker run -it --rm -v `pwd`:/src bao2703/opencv
+```
+
+### PowerShell
+```
+docker run -it --rm -v ${PWD}:/src bao2703/opencv
+```
+
+### CMD
+```
+docker run -it --rm -v %cd%:/src bao2703/opencv
 ```
