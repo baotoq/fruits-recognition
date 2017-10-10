@@ -1,3 +1,4 @@
+import const
 import cv2
 import numpy as np
 import os
@@ -10,8 +11,10 @@ FRUIT_DIR = ['cucumber', 'kiwi', 'mangosteen', 'starfruit', 'strawberry']
 for i in range(len(FRUIT_DIR)):
     FRUIT_DIR[i] = os.path.join(IMAGES_DIR, FRUIT_DIR[i])
 
+if not os.path.exists(OUTPUT_DIR):
+    os.makedirs(OUTPUT_DIR)
 
-###################################
+######################################
 def grayscale(img):
 	return cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -38,8 +41,6 @@ def canny_edge(img, sigma=0.33):
 ####################################
 
 
-
-####################################
 for i in range(1, 301):
     try:
         print(i)

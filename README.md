@@ -4,17 +4,22 @@
 
 ## HOW TO RUN
 
-### Terminal
+### RUN 
 ```
-docker run -it --rm -v `pwd`:/src bao2703/opencv
-```
-
-### PowerShell
-```
-docker run -it --rm -v ${PWD}:/src bao2703/opencv
+docker build -t fruits-recognition .
 ```
 
-### CMD
+#### Terminal
 ```
-docker run -it --rm -v %cd%:/src bao2703/opencv
+docker run -it --rm -v `pwd`:/src --user `id -u` fruits-recognition
+```
+
+#### PowerShell
+```
+docker run -it --rm -v ${PWD}:/src fruits-recognition
+```
+
+#### CMD
+```
+docker run -it --rm -v %cd%:/src fruits-recognition
 ```
