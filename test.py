@@ -1,4 +1,3 @@
-import const
 import cv2
 import numpy as np
 import os
@@ -41,14 +40,14 @@ def canny_edge(img, sigma=0.33):
 ####################################
 
 
-for i in range(1, 301):
-    try:
-        print(i)
-        img = cv2.imread(os.path.join(FRUIT_DIR[0], '{0}.jpg'.format(i)))
-        img = grayscale(img)
-        img = gaussian_blur(img)
-        img = canny_edge(img)
-        cv2.imwrite(os.path.join(OUTPUT_DIR, '{0}.jpg'.format(i)), img)
-        pass
-    except :
-        print('Error {0}'.format(i))
+# for i in range(1, 301):
+#     try:
+#         print(i)
+#         img = cv2.imread(os.path.join(FRUIT_DIR[0], '{0}.jpg'.format(i)))
+#         img = grayscale(img)
+#         img = gaussian_blur(img)
+#         img = canny_edge(img)
+#         cv2.imwrite(os.path.join(OUTPUT_DIR, '{0}.jpg'.format(i)), img)
+#         pass
+#     except :
+#         print('Error {0}'.format(i))

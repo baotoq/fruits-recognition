@@ -14,6 +14,7 @@ def video_to_frames(video, output_dir):
             cv2.imwrite(os.path.join(output_dir, '{0}.jpg'.format(count)), frame)
             count += 1
         else:
+            print('fail')
             break
     cap.release()
     pass
