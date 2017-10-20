@@ -6,13 +6,13 @@ def video_to_frames(video, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     cap = cv2.VideoCapture(video)
-    count = 1
+    count = 352
     while True:
         success, frame = cap.read()        
         if success:
+            count += 1
             print('processing')
             cv2.imwrite(os.path.join(output_dir, '{0}.jpg'.format(count)), frame)
-            count += 1
         else:
             print('fail')
             break
