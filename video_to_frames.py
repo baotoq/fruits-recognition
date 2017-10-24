@@ -6,7 +6,7 @@ def video_to_frames(video, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     cap = cv2.VideoCapture(video)
-    count = 352
+    count = 173
     while True:
         success, frame = cap.read()        
         if success:

@@ -23,3 +23,11 @@ def crop():
     pass
 
 # crop()
+
+o = open('info.txt', 'w')
+for i in range(10, 755):
+    if not (i == 99 or i == 312):
+        f = open(os.path.join('dataset/samples', '{}.jpg.txt'.format(i)), 'r')
+        for line in f:
+            print(line)
+            o.write(line)

@@ -41,13 +41,13 @@ def detect_bounding(image_path, image_name):
     i = 0
     for c in contours:
         x, y, w, h = cv2.boundingRect(c)
-        if w > 40 and h > 40:
+        if w > 500 and h > 500:
             i += 1
             cv2.imwrite('output/{}_{}.jpg'.format(image_name, i), image[y: y + h, x: x + w])
     pass
 
 
-# image_paths, image_names = load_images('dataset', 'mangosteen/images')
-# for image_path,image_name in zip(image_paths, image_names):
-#     print(image_path)
-    # detect_bounding(image_path, image_name)
+image_paths, image_names = load_images('dataset', 'starfruit/images')
+for image_path,image_name in zip(image_paths, image_names):
+    print(image_path)
+    detect_bounding(image_path, image_name)
