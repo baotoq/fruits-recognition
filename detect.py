@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import os
 
-cascade = cv2.CascadeClassifier("cascade/starfruit_cascade.xml")
+cascade = cv2.CascadeClassifier("cascade/mangosteen_cascade.xml")
 
 def detect(img):
 	img = cv2.resize(img, (500, 500))
@@ -14,7 +14,7 @@ def detect(img):
 	return img
 
 def real_time():
-    cap = cv2.VideoCapture('dataset/starfruit/videos/2.mp4')
+    cap = cv2.VideoCapture('dataset/mangosteen/videos/4.mp4')
     while True:
         success, frame = cap.read()
         if success:
