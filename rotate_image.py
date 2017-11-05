@@ -23,10 +23,10 @@ def rotate_image(image_path, image_name):
     
     M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 270, 1)
     dst = cv2.warpAffine(image, M, (cols, rows))
-    cv2.imwrite('output2/{}.jpg'.format(image_name), dst)
+    cv2.imwrite('output/{}.jpg'.format(image_name), dst)
     pass
 
-i = 214
+i = 0
 image_paths, image_names = load_images('dataset', 'cucumber/images')
 for image_path,image_name in zip(image_paths, image_names):
     print(image_path)
