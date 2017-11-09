@@ -14,7 +14,7 @@ def detect(img):
 	return img
 
 def real_time():
-    cap = cv2.VideoCapture('dataset/mangosteen/videos/4.mp4')
+    cap = cv2.VideoCapture(0)
     while True:
         success, frame = cap.read()
         if success:

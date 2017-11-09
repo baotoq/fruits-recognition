@@ -12,7 +12,7 @@ def grayscale(img):
 	return cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 def canny_edge(img):
-    return cv2.Canny(img, 10, 50)
+    return cv2.Canny(img, 10, 30)
 
 def load_images(dataset_path, fruit):
     image_paths = []
@@ -30,7 +30,7 @@ def load_images(dataset_path, fruit):
 
 def detect_bounding(image_path, image_name):
     image = cv2.imread(image_path)
-    #image = image[50: 1400, 50: 1440]
+    image = image[10: 1440, 100: 1320]
     image = gaussian_blur(image)
     gray = grayscale(image)
     edged = canny_edge(gray)
@@ -45,13 +45,13 @@ def detect_bounding(image_path, image_name):
     i = 0
     for c in contours:
         x, y, w, h = cv2.boundingRect(c)
-        if (w > 1200 and h > 250) or (w > 250 and h > 1200):
+        if w > 100 and h > 200:
             i += 1
-            cv2.imwrite('output/{}.jpg'.format(image_name, i), image[y: y + h, x: x + w])
+            cv2.imwrite('output/{}'.format(image_name, i), image[y: y + h, x: x + w])
     pass
 
 #detect_bounding('dataset/cucumber/images/135.jpg', '1')
-image_paths, image_names = load_images('dataset', 'cucumber/images')
+image_paths, image_names = load_images('dataset', 'starfruit/images/3')
 for image_path,image_name in zip(image_paths, image_names):
     print(image_path)
     detect_bounding(image_path, image_name)
