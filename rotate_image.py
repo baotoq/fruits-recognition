@@ -26,8 +26,8 @@ def rotate_image(image_path, image_name):
     cv2.imwrite('output/{}.jpg'.format(image_name), dst)
     pass
 
-i = 0
-image_paths, image_names = load_images('dataset', 'cucumber/images')
+i = 865
+image_paths, image_names = load_images('dataset', 'starfruit/images/2')
 for image_path,image_name in zip(image_paths, image_names):
     print(image_path)
     i += 1

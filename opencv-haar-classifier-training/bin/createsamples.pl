@@ -72,8 +72,8 @@ for (my $k = 0; $k < $#positives; $k++ ) {
     #system("cat $tmpfile");
 
     !chomp($img);
-    my $vec = $outputdir . substr($img, $imgdirlen) . ".vec" ;
-    print "$cmd -img $img -bg $tmpfile -vec $vec -num $num" . "\n";
-    system("$cmd -img $img -bg $tmpfile -vec $vec -num $num");
+    my $vec = $outputdir . substr($img, $imgdirlen) . ".txt" ;
+    print "$cmd -img $img -bg $tmpfile -info $vec -num $num" . "\n";
+    system("$cmd -img $img -bg $tmpfile -info $vec -num $num");
 }
 unlink($tmpfile);
